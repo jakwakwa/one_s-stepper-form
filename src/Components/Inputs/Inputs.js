@@ -1,5 +1,4 @@
 import React from "react";
-// import { useState } from "react";
 import { UilMars, UilVenus } from "@iconscout/react-unicons";
 
 const Inputs = ({ it, handleChange, ageValue }) => {

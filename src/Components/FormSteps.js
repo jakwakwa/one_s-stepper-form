@@ -1,13 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-// import "./index.css";
-// import InputRows from "./InputRows";
 import { Button } from "antd";
 import Inputs from "./Inputs/Inputs";
-// import InputRows from "./InputRows";
-
-// import RowOne from "../App";
 
 const FormSteps = ({
   firstQuestionData,
