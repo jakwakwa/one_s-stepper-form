@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3a6b8e50.css",
+    "main.js": "/static/js/main.cf46c46a.js",
+    "static/js/787.85f7e862.chunk.js": "/static/js/787.85f7e862.chunk.js",
+    "static/media/pexels-artem-podrez-6787051.jpg": "/static/media/pexels-artem-podrez-6787051.75d84e65bf976a3112da.jpg",
+    "index.html": "/index.html",
+    "main.3a6b8e50.css.map": "/static/css/main.3a6b8e50.css.map",
+    "main.cf46c46a.js.map": "/static/js/main.cf46c46a.js.map",
+    "787.85f7e862.chunk.js.map": "/static/js/787.85f7e862.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a6b8e50.css",
+    "static/js/main.cf46c46a.js"
+  ]
+}
