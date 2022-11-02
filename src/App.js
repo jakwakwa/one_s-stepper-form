@@ -1,5 +1,5 @@
+import * as React from "react";
 import { useState, useEffect } from "react";
-
 import "./App.css";
 import Questions from "./one-spark-questions.json";
 
