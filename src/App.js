@@ -4,6 +4,7 @@ import "./App.css";
 import Questions from "./one-spark-questions.json";
 
 import FormSteps from "./Components/FormSteps";
+import "antd/dist/antd.min.css";
 
 function App() {
   const [questions] = useState(Questions);
