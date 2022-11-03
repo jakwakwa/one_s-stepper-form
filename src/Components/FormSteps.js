@@ -12,6 +12,8 @@ const FormSteps = ({
   inputs,
   ageValue,
   handleChange,
+  selectedCb,
+  setSelectedCb,
 }) => {
   const [current, setCurrent] = useState(0);
 
@@ -107,6 +109,8 @@ const FormSteps = ({
                   it={item}
                   ageValue={ageValue}
                   handleChange={handleChange}
+                  selectedCb={selectedCb}
+                  setSelectedCb={setSelectedCb}
                 />
               ))}
           </div>

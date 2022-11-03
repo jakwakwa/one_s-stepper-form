@@ -1,8 +1,9 @@
 import React from "react";
 import { UilMars, UilVenus } from "@iconscout/react-unicons";
+import CheckBoxGroup from "./CheckboxGroup";
 
-const Inputs = ({ it, handleChange, ageValue }) => {
-  console.log(it.lable);
+const Inputs = ({ it, handleChange, ageValue, selectedCb, setSelectedCb }) => {
+  // console.log(it.lable);
   return (
     <div className="inputRow ">
       {it.type !== "radio" && (
@@ -86,16 +87,11 @@ const Inputs = ({ it, handleChange, ageValue }) => {
 
       {it.type === "checkbox" && (
         <div className="wrapper">
-          {it.options.map((i) => (
-            <div className="checkBoxFieldWrapper ">
-              <span className="checkBoxLabel">{i.label}</span>
-              <input
-                className="defaultCheckbox longCheckbox"
-                name={i.name}
-                type={it.type}
-              ></input>
-            </div>
-          ))}
+          <CheckBoxGroup
+            checkboxes={it}
+            selectedCb={selectedCb}
+            setSelectedCb={setSelectedCb}
+          />
         </div>
       )}
 

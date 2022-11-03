@@ -9,7 +9,7 @@ import "antd/dist/antd.min.css";
 function App() {
   const [questions] = useState(Questions);
   const [ageValue, setAgeValue] = useState({ value: null });
-
+  const [selectedCb, setSelectedCb] = useState([]);
   const [firstSetQuestions, setFirstSetQuestions] = useState([]);
   const [secondSetQuestions, setSecondSetQuestions] = useState([]);
   const [thirdSetQuestions, setThirdSetQuestions] = useState([]);
@@ -43,6 +43,7 @@ function App() {
     setThirdSetQuestions(thirdSetQ);
     setFourthSetQuestions(fourthSetQ);
     setFifthSetQuestions(fifthSetQ);
+    console.log(selectedCb);
   }, [questions.sections, firstSetQuestions, secondSetQuestions]);
 
   // TODO: loop over this instead
@@ -64,6 +65,8 @@ function App() {
         fifthQuestionData={fithSetQuestions}
         ageValue={ageValue}
         handleChange={handleChange}
+        selectedCb={selectedCb}
+        setSelectedCb={setSelectedCb}
       />
     </div>
   );
