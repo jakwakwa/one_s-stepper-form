@@ -824,7 +824,7 @@ input {
     inset -0.2rem -0.2rem 0.5rem #ffffff;
   border: 1px solid #ebf6ff;
 }
-. .genderRadio:first-of-type:checked {
+.genderRadio:first-of-type:checked {
   /* background-image: url("./images/yes-selected.svg"); */
   background-color: #a8d4ff3f;
   border-color: #00d6ba;

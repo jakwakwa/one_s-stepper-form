@@ -149,11 +149,9 @@ const FormSteps = ({
   const prev = () => {
     setCurrent(current - 1);
   };
-  //   const items = steps.map((item) => ({ key: item.title, title: item.content }));
 
   return (
     <>
-      {/* <Steps current={current} items={items} /> */}
       <div className="steps-content">{steps[current].content}</div>
       <div className="steps-action">
         {current > 0 && (

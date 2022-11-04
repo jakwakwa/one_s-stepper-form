@@ -19,7 +19,6 @@ function App() {
   function handleChange(event) {
     setAgeValue({ value: event.target.value });
   }
-  // console.log(ageValue);
 
   useEffect(() => {
     let firstSetQ;
@@ -43,17 +42,8 @@ function App() {
     setThirdSetQuestions(thirdSetQ);
     setFourthSetQuestions(fourthSetQ);
     setFifthSetQuestions(fifthSetQ);
-    console.log(selectedCb);
-  }, [questions.sections, firstSetQuestions, secondSetQuestions]);
+  }, [selectedCb, questions.sections, firstSetQuestions, secondSetQuestions]);
 
-  // TODO: loop over this instead
-
-  // const secondSetQuestions = questionArrays[1];
-  // const thirdSetQuestions = questionArrays[2];
-  // const fourthSetQuestions = questionArrays[3];
-  // const fifthSetQuestions = questionArrays[4];
-
-  // console.log(firstSetQuestions);
   return (
     <div className="App">
       <div className="header">

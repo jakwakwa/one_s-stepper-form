@@ -1,9 +1,9 @@
 import React from "react";
-import { UilMars, UilVenus } from "@iconscout/react-unicons";
+
 import CheckBoxGroup from "./CheckboxGroup";
+import Radio from "./Radio";
 
 const Inputs = ({ it, handleChange, ageValue, selectedCb, setSelectedCb }) => {
-  // console.log(it.lable);
   return (
     <div className="inputRow ">
       {it.type !== "radio" && (
@@ -40,50 +40,24 @@ const Inputs = ({ it, handleChange, ageValue, selectedCb, setSelectedCb }) => {
       {it.type === "radio" && it.name === "gender" ? (
         <>
           <div className="genderRadios">
-            {it.options.map((i) => (
-              <div className={"radioFieldWrapper"}>
-                <span className="genderWrapper gender">
-                  {i.text === "Male" ? (
-                    <>
-                      <input
-                        className="genderRadio"
-                        name={i.name}
-                        type={it.type}
-                      ></input>
-                      <UilMars />
-                    </>
-                  ) : (
-                    <>
-                      <input
-                        className="genderRadio"
-                        name={i.name}
-                        type={it.type}
-                      ></input>
-                      <UilVenus />
-                    </>
-                  )}
-                </span>
-                <span className="genderRadioLabel"> {i.text}</span>
-              </div>
-            ))}
+            <div className={"radioFieldWrapper"}>
+              <span className="genderWrapper gender">
+                <Radio
+                  variant="gender"
+                  id={it.id}
+                  radioOptions={it.options}
+                ></Radio>
+              </span>
+            </div>
           </div>
         </>
       ) : it.type === "radio" && it.name !== "gender" ? (
         <label>{it.label}</label>
       ) : null}
 
-      {it.type === "radio" && it.name !== "gender"
-        ? it.options.map((i) => (
-            <div className="radioFieldWrapper ">
-              <label className="radioLabel">{i.label}</label>
-              <input
-                className="longTextRadio"
-                name={i.name}
-                type={it.type}
-              ></input>
-            </div>
-          ))
-        : null}
+      {it.type === "radio" && it.name !== "gender" ? (
+        <Radio variant="default" id={it.id} radioOptions={it.options}></Radio>
+      ) : null}
 
       {it.type === "checkbox" && (
         <div className="wrapper">
