@@ -1,3 +1,37 @@
+# <strong>Frontend Technical Test <br>by Jaco Kotzee <br>for One Spark</strong>
+
+## <strong>Project Name:</strong> <br>User Flowk<br><br>
+
+## Github Link
+
+[Github Repo](https://github.com/jakwakwa/onespark-test)<br><br>
+
+## Imaginary Scenario
+
+We're launching a new life insurance product targeting South African millennials. The cover amount is better than any other competitor, more affordable, and changes as you go through your various life stages. It's completely transparent, with no hidden fees and powered by intelligent AI algorithms.<br><br>
+
+## UX Exercise
+
+Ideate and present a working page journey that streamlines the process of applying for life insurance online.
+Focus on the sign up journey based on a set of provided questions that will determine the individual's health status and risk. Target a South African millennial persona that is tech savvy while still accommodating users that are not.
+Outline your concept in sketch format to illustrate the UX journey. Think of using different types of engagement that would connect with the target persona and also set OneSpark apart from a very noisy market.<br><br>
+
+## Coding Exercise
+
+Once you have finalised a concept, bring it to life using your choice of Next.js or React. Where possible avoid using libraries and try keep dependencies to a minimum - we want to see the way you approach the implementation.
+Complete the coding exercise in a new Github repo and provide a link once you are done.<br><br>
+
+Question API endpoint: `https://6356e07f2712d01e14fe89d4.mockapi.io/api/v1/questions`<br><br>
+
+How much time you invest in this exercise is entirely up to you, but we advise you not to spend more than seven days on your implementation. Take us on a journey of your problem-solving process and how you got to your final concept.<br><br>
+
+You will be evaluated based on the originality and implementation of your ideas as well the structure of your code.<br><br>
+
+Have fun, ask questions and don't get stressed out.
+Let me know if you're keen to show off your skills in this exercise and when you would like to present your concept and implementation to the team?<br><br>
+
+We look forward to being surprised and delighted.<br><br>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -28,43 +62,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
