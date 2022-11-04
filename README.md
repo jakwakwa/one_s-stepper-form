@@ -1,6 +1,6 @@
 # <strong>Frontend Technical Test <br>by Jaco Kotzee <br>for One Spark</strong>
 
-## <strong>Project Name:</strong> <br>User Flowk<br><br>
+## <strong>Project Name:</strong> <br>User Flow<br><br>
 
 ## Github Link
 
