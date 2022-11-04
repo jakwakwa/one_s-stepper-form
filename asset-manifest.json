@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/onespark-test/static/css/main.8ccc3d43.css",
-    "main.js": "/onespark-test/static/js/main.6463061c.js",
-    "static/js/787.85f7e862.chunk.js": "/onespark-test/static/js/787.85f7e862.chunk.js",
+    "main.css": "/onespark-test/static/css/main.be3d1275.css",
+    "main.js": "/onespark-test/static/js/main.6443e31d.js",
     "static/media/pexels-artem-podrez-6787051.jpg": "/onespark-test/static/media/pexels-artem-podrez-6787051.75d84e65bf976a3112da.jpg",
     "index.html": "/onespark-test/index.html",
-    "main.8ccc3d43.css.map": "/onespark-test/static/css/main.8ccc3d43.css.map",
-    "main.6463061c.js.map": "/onespark-test/static/js/main.6463061c.js.map",
-    "787.85f7e862.chunk.js.map": "/onespark-test/static/js/787.85f7e862.chunk.js.map"
+    "main.be3d1275.css.map": "/onespark-test/static/css/main.be3d1275.css.map",
+    "main.6443e31d.js.map": "/onespark-test/static/js/main.6443e31d.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ccc3d43.css",
-    "static/js/main.6463061c.js"
+    "static/css/main.be3d1275.css",
+    "static/js/main.6443e31d.js"
   ]
 }
