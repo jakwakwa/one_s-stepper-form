@@ -30,7 +30,6 @@ function App() {
 
     questionArrays = questions.sections.map((item) => item);
 
-    // eslint-disable-next-line no-unused-vars
     firstSetQ = questionArrays[0];
     secondSetQ = questionArrays[1];
     thirdSetQ = questionArrays[2];
