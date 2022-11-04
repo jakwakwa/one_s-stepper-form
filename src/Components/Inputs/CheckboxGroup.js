@@ -39,7 +39,19 @@ const CheckBoxGroup = ({ checkboxes, selectedCb, setSelectedCb }) => {
               </div>
             </>
           ))}
-          <button type="submit">Submit</button>
+          <div>
+            <button
+              type="submit"
+              className="custom-btn btn-15"
+              style={{
+                marginTop: "40px",
+                marginBottom: "40px",
+                backgroundColor: "blue",
+              }}
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
       <p>Selected checkboxes: {JSON.stringify(selectedCheckbox)}</p>

@@ -52,7 +52,7 @@ const FormSteps = ({
         <>
           <div className="row">
             <div className="sectionNumber">
-              <div className="numberCircle">{1}</div>
+              <div className="numberCircle">{2}</div>
               <div className="sectionTitle">
                 <h2>How would you like us to contact you?</h2>
               </div>
@@ -155,7 +155,13 @@ const FormSteps = ({
       <div className="steps-content">{steps[current].content}</div>
       <div className="steps-action">
         {current > 0 && (
-          <button className="custom-btn btn-15" onClick={() => prev()}>
+          <button
+            className="custom-btn btn-15"
+            style={{
+              backgroundColor: "rgba(119,50,170,0.9)",
+            }}
+            onClick={() => prev()}
+          >
             Previous
           </button>
         )}

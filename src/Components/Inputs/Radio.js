@@ -1,18 +1,9 @@
 import React, { forwardRef, useState } from "react";
 import { UilMars, UilVenus } from "@iconscout/react-unicons";
 
-export type RadioValue = React.InputHTMLAttributes<HTMLInputElement>["value"];
-export type RadioChangeEvent = SurveyInputChangeEvent<RadioValue>;
-export type RadioChangeEventHandler = ChangeEventHandler<RadioChangeEvent>;
-
-export type RadioProps = Omit<RadioInputProps, "onChange"> & {
-  onChange?: RadioChangeEventHandler,
-  children?: React.ReactNode,
-};
-
 const Radio = ({ radioOptions, variant }) => {
   const [radioInputOptions, setRadioInputOptions] = useState({
-    selected: radioOptions[0].value,
+    selected: "",
   });
 
   function handleRadio(e) {
@@ -44,16 +35,12 @@ const Radio = ({ radioOptions, variant }) => {
             ))
           : null}
 
-        {variant === "gender"
-          ? radioOptions.map((radioOption) => (
+        {variant === "gender" ? (
+          <div className="genderRadios">
+            {radioOptions.map((radioOption) => (
               <div className={"radioFieldWrapper"}>
                 <span className="genderWrapper gender">
                   <>
-                    {radioOption.text === "Male" ? (
-                      <UilMars />
-                    ) : (
-                      <UilVenus></UilVenus>
-                    )}
                     <input
                       className={`genderRadio ${variant}`}
                       id={radioOption.label}
@@ -63,12 +50,18 @@ const Radio = ({ radioOptions, variant }) => {
                       checked={radioInputOptions.selected === radioOption.value}
                       onChange={handleRadio}
                     ></input>
+                    {radioOption.text === "Male" ? (
+                      <UilMars />
+                    ) : (
+                      <UilVenus></UilVenus>
+                    )}
                   </>
                 </span>
                 <span className="genderRadioLabel"> {radioOption.text}</span>
               </div>
-            ))
-          : null}
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );
