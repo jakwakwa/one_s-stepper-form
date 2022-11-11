@@ -16,7 +16,56 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
+    <script>
+      var json = {
+        _id: "5d455c23c6fb9142752bd914",
+        styles: "<span style='color: yellow'>styles<span>",
+        index: 0,
+        isTrue: [true, false, null, 2e50, 3e-50],
+        guid: "fafa1609-a9d1-4737-9fe8-edfb94a76414",
+        isActive: false,
+        balance: "$2,057.59",
+        picture: "http://placehold.it/32x32",
+        age: 27,
+        eyeColor: "brown",
+        name: "Wood Rhodes",
+        gender: "male",
+        company: "DAISU",
+        email: "woodrhodes@daisu.com",
+        phone: "+1 (894) 567-2696",
+        address: "811 McKibben Street, Vivian, Florida, 8312",
+        about:
+          "Anim esse in mollit sunt amet id do id in irure do non anim ut. Mollit minim Lorem cillum aliquip. Sit eu esse aliqua Lorem. Nulla dolore exercitation sunt fugiat esse deserunt labore est in occaecat.\r\n",
+        registered: "2019-04-28T11:30:33 -03:00",
+        latitude: -72.174311,
+        longitude: 83.803124,
+        tags: [
+          "cillum",
+          "reprehenderit",
+          "minim",
+          "qui",
+          "minim",
+          "non",
+          "occaecat",
+        ],
+        friends: [
+          {
+            id: 0,
+            name: "Hart Sandoval",
+          },
+          {
+            id: 1,
+            name: "Klein Maddox",
+          },
+          {
+            id: 2,
+            name: "Yesenia Mitchell",
+          },
+        ],
+        greeting: "Hello, Wood Rhodes! You have 8 unread messages.",
+        favoriteFruit: "apple",
+      };
+    </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -46,9 +95,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" type="text/css" href="./prettify.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.

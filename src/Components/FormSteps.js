@@ -1,21 +1,25 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "antd";
 import Inputs from "./Inputs/Inputs";
 
 const FormSteps = ({
-  firstQuestionData,
-  secondQuestionData,
-  thirdQuestionData,
-  fourthQuestionData,
-  fifthQuestionData,
-  inputs,
-  ageValue,
-  handleChange,
+  questionsData,
+  handleInputChange,
+  handleRadio,
+  firstStepVal,
+  secondStepVal,
+  thirdStepVal,
+  fourthStepVal,
+  fifthStepVal,
+  setFourthStepVal,
   selectedCb,
+  checkedVal,
+  setCheckedVal,
+  setFormSubmitted,
   setSelectedCb,
 }) => {
   const [current, setCurrent] = useState(0);
+  const { firstSet, secondSet, thirdSet, fourthSet, fifthSet } = questionsData;
 
   const steps = [
     {
@@ -29,12 +33,15 @@ const FormSteps = ({
                 <h2>Kindly Share Your Personal Information</h2>
               </div>
             </div>
-            {firstQuestionData !== undefined &&
-              firstQuestionData.questions?.map((item) => (
+            {firstSet !== undefined &&
+              firstSet?.map((item) => (
                 <Inputs
+                  key={item.id}
                   it={item}
-                  ageValue={ageValue}
-                  handleChange={handleChange}
+                  handleRadio={handleRadio}
+                  handleInputChange={handleInputChange}
+                  firstStepVal={firstStepVal}
+                  secondStepVal={false}
                 />
               ))}
             {current > 0 && (
@@ -57,12 +64,15 @@ const FormSteps = ({
                 <h2>How would you like us to contact you?</h2>
               </div>
             </div>
-            {secondQuestionData !== undefined &&
-              secondQuestionData.questions?.map((item) => (
+            {secondSet !== undefined &&
+              secondSet?.map((item) => (
                 <Inputs
+                  key={item.id}
                   it={item}
-                  ageValue={ageValue}
-                  handleChange={handleChange}
+                  handleRadio={handleRadio}
+                  handleInputChange={handleInputChange}
+                  firstStepVal={false}
+                  secondStepVal={secondStepVal}
                 />
               ))}
           </div>
@@ -80,12 +90,18 @@ const FormSteps = ({
                 <h2>Tell us more about your health</h2>
               </div>
             </div>
-            {thirdQuestionData !== undefined &&
-              thirdQuestionData.questions?.map((item) => (
+            {thirdSet !== undefined &&
+              thirdSet?.map((item) => (
                 <Inputs
+                  key={item.id}
                   it={item}
-                  ageValue={ageValue}
-                  handleChange={handleChange}
+                  handleRadio={handleRadio}
+                  handleInputChange={handleInputChange}
+                  firstStepVal={false}
+                  secondStepVal={false}
+                  thirdStepVal={thirdStepVal}
+                  checkedVal={checkedVal}
+                  setCheckedVal={setCheckedVal}
                 />
               ))}
           </div>
@@ -103,14 +119,19 @@ const FormSteps = ({
                 <h2>Lifestyle Choices</h2>
               </div>
             </div>
-            {fourthQuestionData !== undefined &&
-              fourthQuestionData.questions?.map((item) => (
+            {fourthSet !== undefined &&
+              fourthSet?.map((item) => (
                 <Inputs
+                  key={item.id}
                   it={item}
-                  ageValue={ageValue}
-                  handleChange={handleChange}
+                  handleRadio={handleRadio}
                   selectedCb={selectedCb}
                   setSelectedCb={setSelectedCb}
+                  handleInputChange={handleInputChange}
+                  firstStepVal={false}
+                  secondStepVal={false}
+                  fourthStepVal={fourthStepVal}
+                  setFourthStepVal={setFourthStepVal}
                 />
               ))}
           </div>
@@ -125,15 +146,20 @@ const FormSteps = ({
             <div className="sectionNumber">
               <div className="numberCircle">{5}</div>
               <div className="sectionTitle">
-                <h2>Almost Done... Just One More Step! </h2>
+                <h2>Almost Done... Just One More Step!</h2>
               </div>
             </div>
-            {fifthQuestionData !== undefined &&
-              fifthQuestionData.questions?.map((item) => (
+            {fifthSet !== undefined &&
+              fifthSet?.map((item) => (
                 <Inputs
+                  key={item.id}
                   it={item}
-                  ageValue={ageValue}
-                  handleChange={handleChange}
+                  handleInputChange={handleInputChange}
+                  handleRadio={handleRadio}
+                  firstStepVal={false}
+                  secondStepVal={false}
+                  fifthStepVal={fifthStepVal}
+                  setFormSubmitted={setFormSubmitted}
                 />
               ))}
           </div>
@@ -170,6 +196,19 @@ const FormSteps = ({
             Continue
           </button>
         )}
+
+        <button
+          type="submit"
+          className="custom-btn btn-15"
+          style={{
+            marginTop: "40px",
+            marginBottom: "40px",
+            backgroundColor: "blue",
+          }}
+        >
+          Submit
+        </button>
+
         {current === steps.length - 1 && <></>}
       </div>
     </>

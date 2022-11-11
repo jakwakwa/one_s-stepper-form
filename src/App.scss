@@ -146,9 +146,6 @@ label {
   min-height: 100px;
   max-height: 120px; */
 }
-.genderRadio {
-  /* display: none; */
-}
 
 .genderRadio {
   position: relative;
@@ -222,6 +219,15 @@ label {
 
 .genderRadio:first-of-type:checked {
   /* background-image: url("./images/yes-selected.svg"); */
+  background-color: #a8d4ff3f;
+  border-color: #00d6ba;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
+}
+
+.longTextRadio.default:first-of-type:checked {
+  background-color: #00d6ba;
   background-color: #a8d4ff3f;
   border-color: #00d6ba;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
@@ -876,4 +882,10 @@ input {
   margin: 0;
   border-radius: 19px;
   padding: 7px 20px;
+}
+
+pre {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
