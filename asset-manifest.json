@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/onespark-test/static/css/main.592eb69f.css",
-    "main.js": "/onespark-test/static/js/main.da6ac393.js",
+    "main.css": "/onespark-test/static/css/main.b85b8df9.css",
+    "main.js": "/onespark-test/static/js/main.52020508.js",
     "static/media/pexels-artem-podrez-6787051.jpg": "/onespark-test/static/media/pexels-artem-podrez-6787051.75d84e65bf976a3112da.jpg",
     "index.html": "/onespark-test/index.html",
-    "main.592eb69f.css.map": "/onespark-test/static/css/main.592eb69f.css.map",
-    "main.da6ac393.js.map": "/onespark-test/static/js/main.da6ac393.js.map"
+    "main.b85b8df9.css.map": "/onespark-test/static/css/main.b85b8df9.css.map",
+    "main.52020508.js.map": "/onespark-test/static/js/main.52020508.js.map"
   },
   "entrypoints": [
-    "static/css/main.592eb69f.css",
-    "static/js/main.da6ac393.js"
+    "static/css/main.b85b8df9.css",
+    "static/js/main.52020508.js"
   ]
 }
