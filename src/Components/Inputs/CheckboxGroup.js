@@ -25,18 +25,16 @@ const CheckBoxGroup = ({
       drugs: selCheckbox,
     });
 
-    //setSelectedCb(selCheckbox)
+
   };
 
-  const handleSubmitCb = () => {
-    setSelectedCb(selCheckbox);
-  };
+
 
   return (
     <div>
       <div className="wrapper">
         {checkboxes.options.map((checkbox) => (
-          <>
+
             <div key={checkbox.id} className="checkBoxFieldWrapper ">
               <span className="checkBoxLabel">{checkbox.label}</span>
               <label key={checkbox.id}>
@@ -49,20 +47,10 @@ const CheckBoxGroup = ({
                 />
               </label>
             </div>
-          </>
+
         ))}
         <div>
-          <button
-            onClick={handleSubmitCb}
-            className="custom-btn btn-15"
-            style={{
-              marginTop: "40px",
-              marginBottom: "40px",
-              backgroundColor: "blue",
-            }}
-          >
-            Submit
-          </button>
+
         </div>
       </div>
     </div>

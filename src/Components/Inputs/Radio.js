@@ -44,7 +44,7 @@ const Radio = ({
                         name={"gender"}
                         type={"radio"}
                         value={radioOption.value}
-                        checked={radioOption.value}
+                        // checked={radioOption.value}
                         onChange={handleRadio}
                       ></input>
                       {radioOption.text === "Male" ? (

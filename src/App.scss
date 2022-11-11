@@ -28,6 +28,7 @@ html {
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
+
 label {
   /* line-height: 0; */
   padding: 0;
@@ -78,11 +79,13 @@ label {
 .inputRow label {
   margin-top: 55px;
 }
+
 .genderWrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
+
 .genderWrapper svg {
   position: absolute;
   margin-left: auto;
@@ -94,6 +97,7 @@ label {
 
   /* align-self: center; */
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -123,6 +127,7 @@ label {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -160,6 +165,7 @@ label {
   width: 70px;
   height: 70px;
 }
+
 .longTextRadio {
   box-sizing: border-box;
   position: relative;
@@ -197,6 +203,7 @@ label {
   /* flex-wrap: wrap; */
   /* justify-content: center; */
 }
+
 .radioFieldWrapper.longTextRadio {
   width: 90px !important;
 }
@@ -234,6 +241,7 @@ label {
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
 }
+
 .radioFieldWrapper .genderRadioLabel {
   font-size: 12px;
   font-weight: 700;
@@ -284,6 +292,7 @@ input[type="tel"] {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 100% 0;
   }
@@ -314,6 +323,7 @@ input[type="tel"] {
   border: none;
   z-index: 1;
 }
+
 .btn-15:after {
   position: absolute;
   content: "";
@@ -328,16 +338,20 @@ input[type="tel"] {
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
+
 .btn-15:hover {
   color: #fff;
 }
+
 .btn-15:hover:after {
   left: 0;
   width: 100%;
 }
+
 .btn-15:active {
   top: 2px;
 }
+
 select {
   /* Reset #bfd2ff */
   color: rgb(64 82 109 / 70%);
@@ -418,18 +432,17 @@ select {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
-  background: linear-gradient(
-    to right,
-    #b294ff,
-    #57e6e6,
-    #feffb8,
-    #57e6e6,
-    #b294ff,
-    #57e6e6
-  );
+  background: linear-gradient(to right,
+      #b294ff,
+      #57e6e6,
+      #feffb8,
+      #57e6e6,
+      #b294ff,
+      #57e6e6);
   background-size: 500% auto;
   animation: gradient 3s linear infinite;
 }
+
 select,
 .webflow-style-input input {
   flex-grow: 1;
@@ -439,11 +452,13 @@ select,
   font-weight: 500;
   vertical-align: middle;
 }
+
 input {
   border-style: none;
   background: transparent;
   outline: none;
 }
+
 /* .intitialOption {
   color: #7881a1;
   line-height: 100%;
@@ -479,6 +494,7 @@ input {
 .header svg {
   margin: 0 auto;
 }
+
 .sectionNumber {
   width: 100%;
   position: relative;
@@ -503,9 +519,11 @@ input {
   #c6f1f1a1
 ); */
 }
+
 .sectionTitle {
   letter-spacing: 0.3px;
 }
+
 .ageInpContainer {
   display: flex;
   gap: 8px;
@@ -514,6 +532,7 @@ input {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 .ageInput {
   width: 30px !important;
   display: inline !important;
@@ -523,6 +542,7 @@ input {
   width: 30px !important;
   display: inline !important;
 }
+
 .numberCircle {
   border-radius: 50%;
   width: 44px;
@@ -540,6 +560,7 @@ input {
   font-weight: 800 !important;
   font: 18px "Montserrat", sans-serif;
 }
+
 .row {
   text-align: center;
   box-sizing: border-box;
@@ -570,6 +591,7 @@ input {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 .genderRadios {
   display: flex;
   flex-direction: row;
@@ -577,6 +599,7 @@ input {
   justify-self: center;
   gap: 1px;
 }
+
 .webflow-style-input.spanInput {
   position: relative;
   display: flex;
@@ -590,6 +613,7 @@ input {
   border-radius: 19px;
   padding: 10px;
 }
+
 .webflow-style-input.spanInput input {
   position: relative;
   display: flex;
@@ -650,6 +674,7 @@ input {
 .longCheckbox:hover {
   background-color: #00dae534;
 }
+
 .wrapper {
   width: 100%;
   display: inline-flex;
@@ -672,6 +697,7 @@ input {
   align-items: center;
   padding: 5px;
 }
+
 .checkBoxFieldWrapper label {
   margin: 0;
   padding: 0;
@@ -704,6 +730,7 @@ input {
   width: 50px;
   margin-bottom: 0 !important;
 }
+
 .secondHalveOfLabelStr {
   margin-top: 0 !important;
   width: 90px;
@@ -830,6 +857,7 @@ input {
     inset -0.2rem -0.2rem 0.5rem #ffffff;
   border: 1px solid #ebf6ff;
 }
+
 .genderRadio:first-of-type:checked {
   /* background-image: url("./images/yes-selected.svg"); */
   background-color: #a8d4ff3f;
@@ -848,6 +876,7 @@ input {
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
 }
+
 .custom-btn {
   width: 160px;
   margin-top: 0px;
@@ -888,4 +917,22 @@ pre {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+}
+
+.bgCode {
+  position: absolute;
+  top: 40%;
+  z-index: 99999999;
+  width: 100%;
+
+  .prettyprint.lang-json {
+    padding: 0;
+    background: #0a0c16;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem #e2e9ff,
+      inset -0.2rem -0.2rem 0.5rem #ffffff;
+    border: 1px solid #ebf6ff;
+    padding: 20px;
+    border-radius: 5px;
+    color: #ffa7fe;
+  }
 }

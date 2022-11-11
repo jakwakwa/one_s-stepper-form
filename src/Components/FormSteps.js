@@ -15,7 +15,7 @@ const FormSteps = ({
   selectedCb,
   checkedVal,
   setCheckedVal,
-  setFormSubmitted,
+  setIsFormSubmitted,
   setSelectedCb,
 }) => {
   const [current, setCurrent] = useState(0);
@@ -159,7 +159,7 @@ const FormSteps = ({
                   firstStepVal={false}
                   secondStepVal={false}
                   fifthStepVal={fifthStepVal}
-                  setFormSubmitted={setFormSubmitted}
+                  setIsFormSubmitted={setIsFormSubmitted}
                 />
               ))}
           </div>
@@ -176,10 +176,14 @@ const FormSteps = ({
     setCurrent(current - 1);
   };
 
+
+
+
   return (
     <>
       <div className="steps-content">{steps[current].content}</div>
       <div className="steps-action">
+        {/*  */}
         {current > 0 && (
           <button
             className="custom-btn btn-15"
@@ -192,12 +196,13 @@ const FormSteps = ({
           </button>
         )}
         {current < steps.length - 1 && (
-          <button className="custom-btn btn-15" onClick={() => next()}>
+          <button className="custom-btn btn-15" onClick={(e) => { e.preventDefault();
+            next()}}>
             Continue
           </button>
         )}
 
-        <button
+      {current > 3 ? <button
           type="submit"
           className="custom-btn btn-15"
           style={{
@@ -207,9 +212,9 @@ const FormSteps = ({
           }}
         >
           Submit
-        </button>
+        </button> : ""}
 
-        {current === steps.length - 1 && <></>}
+
       </div>
     </>
   );

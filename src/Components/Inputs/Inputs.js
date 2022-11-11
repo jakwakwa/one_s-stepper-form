@@ -12,7 +12,7 @@ const Inputs = ({
   thirdStepVal,
   fourthStepVal,
   setFourthStepVal,
-  setFormSubmitted,
+  setIsFormSubmitted,
   selectedCb,
   checkedVal,
   setSelectedCb,
@@ -89,7 +89,7 @@ const Inputs = ({
             checkboxes={it}
             selectedCb={selectedCb}
             setSelectedCb={setSelectedCb}
-            setFormSubmitted={setFormSubmitted}
+            setIsFormSubmitted={setIsFormSubmitted}
             fourthStepVal={fourthStepVal}
             setFourthStepVal={setFourthStepVal}
           />
