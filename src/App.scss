@@ -3,6 +3,79 @@ html {
   font-size: 10px;
 }
 
+.form-submitted {
+  background-color: #e8e8e8;
+  height: 100%;
+  max-height: 550px;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  width: 50vw;
+  left: 25vw;
+  top: 5%;
+}
+
+select:has( > option.blah),
+input::placeholder {
+
+  color: rgb(193, 187, 210) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  font-size: 1.2rem;
+}
+
+select option.blah {
+  font-size: 100px;
+}
+
+
+
+
+// select:has(> option.intitialOption)  {
+//   color: rgb(153, 145, 175) !important;
+//   font-weight: 400 !important;
+//   font-style: italic !important;
+//   font-size: 1.2rem !important;
+// }
+
+.webflow-style-input:has(> input:focus),
+.webflow-style-input:has(> select:focus) {
+  outline: 1px solid rgba(0, 255, 247, 0.222);
+  box-shadow: 0px 0px 5px 1px rgba(0, 213, 206,.4);
+
+
+  &::after   {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 3px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right,
+        #b294ff,
+        #57e6e6,
+        #feffb8,
+        #57e6e6,
+        #b294ff,
+        #57e6e6);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+    }
+  }
+
+  .webflow-style-input:has(> input:active),
+.webflow-style-input:has(> select:active) {
+  outline: 3px solid rgba(96, 163, 215, 0.122);
+  box-shadow: 0px 0px 0px 2px rgba(113, 255, 220, 0.5);
+
+  }
+
+
+
 .steps-action {
   background-color: #00d6ba;
   position: relative;
@@ -156,14 +229,40 @@ label {
   position: relative;
   z-index: 1;
   appearance: none;
-  border: solid 1px #72978d;
-  background-color: #f1f5f534;
+  border: solid 1.3px #b1e3d6;
+  background-color:  rgba(241, 245, 245, 0.2039215686);
   cursor: pointer;
   box-sizing: border-box;
   padding: 0px;
   border-radius: 50%;
   width: 70px;
   height: 70px;
+  box-shadow: rgba(104, 178, 231, 0.6) 0px 1.5px 4px 0px, rgba(104, 134, 231, 0.2) 0px 3px 8px 0px,
+  rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.validation {
+  background-color: #cc0047;
+  font-size: 10px;
+  color: rgb(255, 208, 229);
+  display: inline-block;
+  padding: 7px;
+  margin: 0;
+  left: 0;
+  bottom: -27px;
+  position: absolute;
+  border-radius: 5px;
+  box-sizing: border-box;
+  line-height: 100%;
+  align-items: center;
+  align-self: center;
+  height: auto;
+  &.hide {
+    display: none;
+  }
+  &.show {
+    display: inline-block;
+    z-index: 99999;
+  }
 }
 
 .longTextRadio {
@@ -312,16 +411,17 @@ input[type="tel"] {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  // box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+  //   7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 .btn-15 {
-  background: #00dbe5;
+  // background-color: #16082b;
   border: none;
   z-index: 1;
+    border-radius: 5px;
 }
 
 .btn-15:after {
@@ -332,11 +432,28 @@ input[type="tel"] {
   top: 0;
   right: 0;
   z-index: -1;
-  background-color: #00d6ba;
-  border-radius: 5px;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background-color: #f7f2ff22;
+    border-radius: 5px;
+  // box-shadow:
+  //   7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+}
+
+.custom-btn {
+
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #f7f2ff22;
+      border-radius: 5px;
+    box-shadow:
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
 }
 
 .btn-15:hover {
@@ -421,27 +538,9 @@ select {
   animation: gradient 3s linear infinite;
 } */
 
-.webflow-style-input:after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 999;
-  height: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  background-position: 0% 0%;
-  background: linear-gradient(to right,
-      #b294ff,
-      #57e6e6,
-      #feffb8,
-      #57e6e6,
-      #b294ff,
-      #57e6e6);
-  background-size: 500% auto;
-  animation: gradient 3s linear infinite;
-}
+// .webflow-style-input:after {
+//   display: none;
+// }
 
 select,
 .webflow-style-input input {
@@ -507,7 +606,7 @@ input {
   padding: 5px;
   margin-bottom: 50px;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-  border-radius: 25px;
+    border-radius: 5px;
   /* background: linear-gradient(
   to right,
 
@@ -882,17 +981,16 @@ input {
   margin-top: 0px;
   height: 60px;
   color: #fff;
-  border-radius: 7px;
+    border-radius: 5px;
   padding: 10px 40px;
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  // box-shadow:
+  //   7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
@@ -919,11 +1017,72 @@ pre {
   margin: 0 auto;
 }
 
+.reset-btn,
+.close-btn {
+
+  border-radius: 5px;
+display: block;
+margin: 0 auto;
+color: white;
+cursor: pointer;
+
+
+
+  background-color: #cc0047;
+    border-radius: 5px;
+  box-shadow:
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+}
+
+
+
+.next-btn {
+
+border-radius: 5px;
+display: block;
+margin: 0 auto;
+color: white;
+cursor: pointer;
+background-color: #1b0d33;
+
+
+}
+
+.submit-btn {
+
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  color: white;
+  cursor: pointer;
+  background-color: #0091ff;
+
+
+  }
+
+
+.prev-btn {
+
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow:none;
+  }
+
+
 .bgCode {
   position: absolute;
-  top: 40%;
+  top: 10%;
   z-index: 99999999;
   width: 100%;
+
+
+
 
   .prettyprint.lang-json {
     padding: 0;
@@ -933,6 +1092,6 @@ pre {
     border: 1px solid #ebf6ff;
     padding: 20px;
     border-radius: 5px;
-    color: #ffa7fe;
+    color: #f1fffc;
   }
 }

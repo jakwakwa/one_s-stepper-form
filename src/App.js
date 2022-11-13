@@ -6,8 +6,7 @@ import DefautlValues from "./DefaultValues/DefaultValues";
 import FormSteps from "./Components/FormSteps";
 import "antd/dist/antd.min.css";
 
-import  OneSparkLogoSvg  from "./Logo/Logo";
-
+import OneSparkLogoSvg from "./Logo/Logo";
 
 function App() {
   const [ageValue] = useState({ value: 0 });
@@ -46,12 +45,10 @@ function App() {
     hasInsurance: "",
   });
 
-
-
   const [firstSet, secondSet, thirdSet, fourthSet, fifthSet] =
     Questions.sections;
 
-  const [ questionsSections ] = useState({
+  const [questionsSections] = useState({
     firstSet: firstSet.questions,
     secondSet: secondSet.questions,
     thirdSet: thirdSet.questions,
@@ -127,7 +124,7 @@ function App() {
 
     if (name === "id_number") {
       valueCopy = parseInt(value);
-      setFirstStepVal({
+      setThirdStepVal({
         ...thirdStepVal,
         idNo: value,
       });
@@ -184,9 +181,9 @@ function App() {
     }
   }
 
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
+    setIsFormSubmitted(true);
     setFormValues({
       ...firstStepVal,
       ...secondStepVal,
@@ -194,17 +191,18 @@ const handleSubmit = (e) => {
       ...fourthStepVal,
       ...fifthStepVal,
     });
-
-    setIsFormSubmitted(true);
-  }
-
+    // setTimeout(() => {
+    //   setIsFormSubmitted(false);
+    //   setResetValues(true);
+    // }, 3000);
+  };
 
   return (
     <>
       <div className="App">
         <div className="header">{OneSparkLogoSvg}</div>
 
-        <form onSubmit={handleSubmit}  >
+        <form onSubmit={handleSubmit}>
           <FormSteps
             questionsData={questionsSections}
             ageValue={ageValue}
@@ -223,15 +221,26 @@ const handleSubmit = (e) => {
             setCheckedVal={setCheckedVal}
             setIsFormSubmitted={setIsFormSubmitted}
           />
-           { isFormSubmitted  && (
-      <div className="json bgCode">
-        <pre className="prettyprint lang-json">
-          {JSON.stringify(formValues, null, 2)}
-        </pre>
-      </div>) }
+          {isFormSubmitted ? (
+            <div className="form-submitted">
+              <div className="json bgCode">
+                <pre className="prettyprint lang-json">
+                  {JSON.stringify(formValues, null, 2)}
+                </pre>
+                <button
+                  className="custom-btn btn-15 close-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsFormSubmitted(false);
+                  }}
+                >
+                  Close Modal
+                </button>
+              </div>
+            </div>
+          ) : null}
         </form>
       </div>
-
     </>
   );
 }

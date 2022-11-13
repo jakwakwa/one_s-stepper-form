@@ -1,7 +1,9 @@
 import React from "react";
 
 import CheckBoxGroup from "./CheckboxGroup";
+import InputField from "./InputField";
 import Radio from "./Radio";
+import SelectField from "./Select";
 
 const Inputs = ({
   it,
@@ -17,13 +19,18 @@ const Inputs = ({
   checkedVal,
   setSelectedCb,
 }) => {
+  const [isTouched, setIsTouched] = React.useState(false);
+  const handleBlur = (e) => {
+    setIsTouched(true);
+  };
+
   return (
     <div className="inputRow ">
       {it.type !== "radio" && (
-        <label>
+        <label htmlFor={`${it.name}-input-id`}>
           {it.name === "age" ? (
             <div className="ageInpContainer">
-              <label className="firstHalveOfLabelStr">
+              <label htmlFor="age-input-field" className="firstHalveOfLabelStr">
                 {it.label
                   .substring(0, it.label.length / 2)
                   .replace(
@@ -34,13 +41,18 @@ const Inputs = ({
               <span className="webflow-style-input spanInput">
                 <input
                   className="ageInput"
+                  id={`${it.name}-input-id`}
+                  placeholder={23}
                   name={it.name}
                   type={it.type}
-                  value={firstStepVal.age}
+                  value={firstStepVal.age === 0 ? "" : firstStepVal.age}
                   onChange={handleInputChange}
                 ></input>
               </span>
-              <label className="secondHalveOfLabelStr">
+              <label
+                id={`${it.name}-input-id`}
+                className="secondHalveOfLabelStr"
+              >
                 {it.label.substring(it.label.length / 2)}
               </label>{" "}
             </div>
@@ -58,7 +70,7 @@ const Inputs = ({
                 <Radio
                   variant="gender"
                   name={"gender"}
-                  id={it.id}
+                  id={`${it.name}-input-id`}
                   radioOptions={it.options}
                   handleRadio={handleRadio}
                   checkedVal={checkedVal}
@@ -68,13 +80,13 @@ const Inputs = ({
           </div>
         </>
       ) : it.type === "radio" && it.name !== "gender" ? (
-        <label>{it.label}</label>
+        <label htmlFor={`${it.name}-input-id`}>{it.label}</label>
       ) : null}
 
       {it.type === "radio" && it.name !== "gender" ? (
         <Radio
           variant="default"
-          id={it.id}
+          id={`${it.name}-input-id`}
           radioOptions={it.options}
           itNo={it.name}
           checkedVal={checkedVal}
@@ -97,46 +109,27 @@ const Inputs = ({
       )}
 
       {it.type === "select" && (
-        <div className="webflow-style-input">
-          <select name={it.name} id="pet-select" onChange={handleInputChange}>
-            <option value="">Select one</option>
-            {it.options.map((opt) => (
-              <option value={opt.label} key={opt.id}>
-                {opt.text ? opt.text : opt.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        <SelectField
+          it={it}
+          handleInputChange={handleInputChange}
+          value={firstStepVal.qualification}
+        />
       )}
 
       {it.type === "search_select" && (
-        <div className="webflow-style-input">
-          <select name={it.name} id="title-select" onChange={handleInputChange}>
-            <option className="intitialOption" value="">
-              Select one
-            </option>
-            {it.options.map((opt) => (
-              <option value={opt.text ? opt.text : opt.value} key={opt.id}>
-                {opt.text ? opt.text : opt.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        <SelectField
+          it={it}
+          handleInputChange={handleInputChange}
+          value={firstStepVal.jobTitle}
+        />
       )}
 
       {it.type === "inline_select" && (
-        <div className="webflow-style-input">
-          <select name={it.name} id="title-select" onChange={handleInputChange}>
-            <option className="optionInitial" value="">
-              Select one
-            </option>
-            {it.options.map((opt) => (
-              <option value={opt.label} key={opt.id}>
-                {opt.text ? opt.text : opt.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        <SelectField
+          it={it}
+          handleInputChange={handleInputChange}
+          value={fourthStepVal.alcohol}
+        />
       )}
 
       {it.type === "text" ||
@@ -144,45 +137,33 @@ const Inputs = ({
       it.type === "email" ||
       it.type === "tel" ||
       it.type === "numeric" ? (
-        <div className="webflow-style-input form__input">
+        <>
           {firstStepVal ? (
-            <input
-              name={it.name}
-              type={it.type}
-              value={
-                it.name === "salary"
-                  ? firstStepVal.salary
-                  : it.name === "age"
-                  ? firstStepVal.age
-                  : null
-              }
-              onChange={handleInputChange}
-            ></input>
+            <InputField
+              it={it}
+              value={firstStepVal}
+              handleInputChange={handleInputChange}
+            />
           ) : null}
+
           {secondStepVal ? (
-            <input
-              name={it.name}
-              type={it.type}
-              value={
-                it.name === "email"
-                  ? secondStepVal.email
-                  : it.name === "name"
-                  ? secondStepVal.name
-                  : it.name === "tel"
-                  ? secondStepVal.tel
-                  : null
-              }
-              onChange={handleInputChange}
-            ></input>
-          ) : thirdStepVal ? (
-            <input
-              name={it.name}
-              type={it.type}
-              value={thirdStepVal.name}
-              onChange={handleInputChange}
-            ></input>
+            <InputField
+              it={it}
+              value={secondStepVal}
+              handleInputChange={handleInputChange}
+              onBlur={handleBlur}
+              isTouched={isTouched}
+            />
           ) : null}
-        </div>
+
+          {thirdStepVal ? (
+            <InputField
+              it={it}
+              value={thirdStepVal}
+              handleInputChange={handleInputChange}
+            />
+          ) : null}
+        </>
       ) : null}
     </div>
   );

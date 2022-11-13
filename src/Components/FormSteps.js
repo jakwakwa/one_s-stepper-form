@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "antd";
 import Inputs from "./Inputs/Inputs";
 
 const FormSteps = ({
@@ -44,11 +43,6 @@ const FormSteps = ({
                   secondStepVal={false}
                 />
               ))}
-            {current > 0 && (
-              <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
-                Previous
-              </Button>
-            )}
           </div>
         </>
       ),
@@ -176,9 +170,6 @@ const FormSteps = ({
     setCurrent(current - 1);
   };
 
-
-
-
   return (
     <>
       <div className="steps-content">{steps[current].content}</div>
@@ -186,35 +177,52 @@ const FormSteps = ({
         {/*  */}
         {current > 0 && (
           <button
-            className="custom-btn btn-15"
-            style={{
-              backgroundColor: "rgba(119,50,170,0.9)",
+            className="custom-btn btn-15 prev-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              if (current < 5) {
+                setIsFormSubmitted(false);
+                prev();
+              } else {
+                prev();
+              }
             }}
-            onClick={() => prev()}
           >
             Previous
           </button>
         )}
         {current < steps.length - 1 && (
-          <button className="custom-btn btn-15" onClick={(e) => { e.preventDefault();
-            next()}}>
+          <button
+            className="custom-btn btn-15 next-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              next();
+            }}
+          >
             Continue
           </button>
         )}
 
-      {current > 3 ? <button
-          type="submit"
-          className="custom-btn btn-15"
-          style={{
-            marginTop: "40px",
-            marginBottom: "40px",
-            backgroundColor: "blue",
-          }}
-        >
-          Submit
-        </button> : ""}
-
-
+        {current > 3 ? (
+          <>
+            <button type="submit" className="custom-btn btn-15 submit-btn">
+              Submit
+            </button>
+            <>
+              <button
+                className="custom-btn btn-15 reset-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrent(0);
+                }}
+              >
+                Reset
+              </button>
+            </>
+          </>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

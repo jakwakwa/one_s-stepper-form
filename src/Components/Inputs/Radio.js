@@ -17,10 +17,15 @@ const Radio = ({
           ? radioOptions.map((radioOption) => {
               return (
                 <div key={radioOption.id} className="radioFieldWrapper">
-                  <label className="radioLabel">{radioOption.label}</label>
+                  <label
+                    htmlFor={`${radioOption.name}-input-id`}
+                    className="radioLabel"
+                  >
+                    {radioOption.label}
+                  </label>
                   <input
                     className={`longTextRadio ${variant}`}
-                    id={radioOption.label}
+                    id={`${radioOption.label}-input-id`}
                     name={`${itNo}`}
                     type={"radio"}
                     value={radioOption.value}
@@ -40,7 +45,7 @@ const Radio = ({
                     <>
                       <input
                         className={`genderRadio ${variant}`}
-                        id={radioOption.label}
+                        id={`${radioOption.text}-input-id`}
                         name={"gender"}
                         type={"radio"}
                         value={radioOption.value}
@@ -54,7 +59,12 @@ const Radio = ({
                       )}
                     </>
                   </span>
-                  <span className="genderRadioLabel">{radioOption.text}</span>
+                  <label
+                    htmlFor={`${radioOption.text}-input-id`}
+                    className="genderRadioLabel"
+                  >
+                    {radioOption.text}
+                  </label>
                 </div>
               );
             })}

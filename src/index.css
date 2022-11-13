@@ -28,5 +28,7 @@ pre {
 
 .json {
   white-space: pre;
-  font: 14px/1.5 Monaco, MonoSpace;
+  font: 14px/1.5 Fira Code, Monaco, MonoSpace;
+  font-weight: 600;
+  letter-spacing: 0.8px;
 }
