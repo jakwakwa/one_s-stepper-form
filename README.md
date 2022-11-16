@@ -6,9 +6,7 @@
 
 [Github Repo](https://github.com/jakwakwa/one_s-test)<br><br>
 
-## Imaginary Scenario
 
-We're launching a new life insurance product targeting South African millennials. The cover amount is better than any other competitor, more affordable, and changes as you go through your various life stages. It's completely transparent, with no hidden fees and powered by intelligent AI algorithms.<br><br>
 
 ## UX Exercise
 
