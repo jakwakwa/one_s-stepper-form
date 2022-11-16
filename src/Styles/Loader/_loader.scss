@@ -1,0 +1,7 @@
+.page-loader > div {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}

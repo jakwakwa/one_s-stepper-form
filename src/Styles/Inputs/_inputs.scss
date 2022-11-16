@@ -1,0 +1,505 @@
+// -- RADIO AND CHECKBOXES
+
+//  LABEL
+.radioFieldWrapper .genderRadioLabel {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.genderRadios .radioFieldWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.selectSpanLabelStr {
+    margin-top: 0 !important;
+    width: 595px;
+    gap: 10px;
+    display: flex;
+    font-size: 21px;
+    margin-bottom: 0 !important;
+    justify-content: flex-start;
+    align-items: center;
+    .webflow-style-input {
+        min-width: 130px;
+    }
+}
+.genderRadioLabel {
+    position: relative !important;
+    text-align: center;
+    display: inline;
+}
+
+.checkbox {
+    align-items: flex-start;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: 0.8s cubic-bezier(1, 0, 0, 1);
+}
+
+.defaultRadio label,
+.checkbox label {
+    cursor: pointer;
+}
+
+.defaultRadio:hover,
+.checkbox:hover {
+    background-color: #00dae534;
+}
+
+.genderRadios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    gap: 44px;
+}
+
+.inputRow label {
+    margin-top: 55px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: rgb(69, 64, 80);
+}
+
+//   DEFAULT RADIO BUTTON LABELS
+
+.radioLabel {
+    cursor: pointer;
+    display: flex;
+    padding-top: 10px !important;
+    font-size: 13px !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    font-family: "Fira Mono", monospace;
+    border: 1px solid #cef7f7;
+    padding: 10px;
+    // margin: 7px;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 0;
+    border-radius: 5px;
+
+    box-shadow: rgb(0 0 0 / 10%) 0px 3px 5px 0px, rgb(0 0 0 / 10%) 0px 0px 1px 0px;
+    transition: 0.8s cubic-bezier(1, 0, 0, 1);
+
+    &:hover {
+        background-color: #6bd4d916;
+    }
+    & input:first-of-type:checked::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #00ffae;
+        background-color: #00c7d9;
+    }
+}
+
+.defaultRadio label {
+    font-size: 12px !important;
+    line-height: 14px !important;
+}
+
+.radioFieldWrapper {
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.defaultRadio {
+    box-sizing: border-box;
+    position: relative;
+    appearance: none;
+    display: block;
+    border: 1px solid #a9a9a9;
+    border-radius: 50%;
+    border-radius: 10px;
+    height: 20px;
+    width: 100%;
+    max-width: 20px;
+}
+
+.checkBoxFieldWrapper {
+    display: flex;
+    width: fit-content;
+    margin: 0;
+    .checkbox {
+        margin-top: 0;
+        margin-bottom: 0;
+        border: 1.5px solid #c8c8c8;
+        border-radius: 4px !important;
+        height: 20px;
+        width: 20px;
+        appearance: none;
+
+        &:first-of-type:checked + svg {
+            display: inline-block;
+            position: absolute;
+            right: 11px;
+        }
+
+        & + svg {
+            display: none;
+        }
+
+        &:first-of-type:checked {
+            background-color: #00d6ba;
+            background-color: #a8d4ff3f;
+            border-color: #00d6ba;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+            background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
+        }
+    }
+
+    .checkboxLabel {
+        & label {
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+            padding: 10px;
+        }
+        cursor: pointer;
+        font-family: "Fira Mono", monospace;
+        position: relative;
+        font-weight: 500;
+        display: flex;
+        font-size: 12px !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 13px;
+        border-radius: 10px;
+        padding: 13px;
+        margin-top: 0 !important;
+        box-shadow: rgb(0 0 0 / 10%) 0px 3px 5px 0px, rgb(0 0 0 / 10%) 0px 0px 1px 0px;
+        transition: 0.8s cubic-bezier(1, 0, 0, 1);
+        &:hover {
+            background-color: #6bd4d916;
+        }
+    }
+}
+
+// DEFAULT STYLES FOR RADIO BUTTONS ( WRAPPER )
+.radioFieldWrapper {
+    label {
+        // position: absolute;
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        line-height: 1.2;
+        font-size: 11px;
+        font-weight: 500;
+        text-align: left;
+        max-width: 443px;
+        padding-left: 15px;
+        font-weight: 500;
+        padding-right: 15;
+    }
+
+    input {
+        line-height: 100%;
+        font-size: 12px;
+        font-weight: 800;
+        min-height: fit-content;
+        font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    }
+}
+
+// GENDER RADIO WRAPPERS
+.genderWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.genderWrapper svg {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    /* z-index: -1; */
+
+    /* align-self: center; */
+}
+
+//  RADIO BUTTONS - GENDER VARIANT
+.genderRadio {
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    border: solid 1.3px #b1e3d6;
+    background-color: rgba(241, 245, 245, 0.2039215686);
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    box-shadow: rgba(104, 178, 231, 0.6) 0px 1.5px 4px 0px, rgba(104, 134, 231, 0.2) 0px 3px 8px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+//   RADIO BUTTON - GENDER VARIANT-- CHECKED STATE
+.genderRadio:first-of-type:checked {
+    background-color: #a8d4ff3f;
+    border-color: #00d6ba;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
+}
+
+// INPUTS - RADIO  ( GENDER )
+.radioFieldWrapper.gender {
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border: 1px solid #cef7f7;
+    padding: 8px;
+    margin: 7px;
+    margin-bottom: 0;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.ageInput {
+    width: 46px !important;
+    display: inline !important;
+}
+.age-input-container {
+    display: flex;
+    gap: 8px;
+    align-items: row;
+    width: 340px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+label.age-label {
+    font-size: 1rem !important;
+    font-weight: 500;
+    color: #7881a1;
+}
+
+.firstHalveOfLabelStr {
+    margin-top: 0 !important;
+    width: 80px;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    width: 50px;
+    margin-bottom: 0 !important;
+}
+
+.secondHalveOfLabelStr {
+    margin-top: 0 !important;
+    width: 180px;
+    margin-bottom: 0 !important;
+}
+
+label.age-label label {
+    font-size: 18px;
+    padding: 10px;
+    width: 800px;
+    font-weight: 500;
+}
+
+label.age-label label {
+    font-size: 18px;
+    padding: 10px;
+    width: 800px;
+    font-weight: 500;
+}
+
+.spanInput {
+    width: 30px !important;
+    display: inline !important;
+}
+
+//  CHECKBOXES ( CUSTOM )
+.defaultRadio.default:first-of-type:checked {
+    background-color: #a8ffe6eb;
+    border: 2px solid #00d6ba;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    // background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
+}
+
+// ALL INPUTS
+input[type="text"],
+input[type="email"],
+input[type="currency"],
+input[type="numeric"],
+input[type="tel"] {
+    width: 300px;
+}
+
+// SELECT AND TEXT INPUTS
+// reset default styles
+input,
+select {
+    border-style: none;
+    background: transparent;
+    outline: none;
+}
+.genderRadio:first-of-type:checked {
+    background-color: #a8d4ff3f;
+    border-color: #00d6ba;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
+}
+
+.defaultRadio:checked {
+    background-color: #00d6ba;
+    background-color: #a8d4ff3f;
+    border-color: #00d6ba;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    background: linear-gradient(to right, #2ce2f637, #b294ff28, #65e3df2a);
+}
+
+.wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.webflow-style-input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 296px;
+    margin: 0;
+    border-radius: 5px;
+    padding: 1.4rem 2rem 1.6rem;
+    background: #f0f3ffcc;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem #e2e9ff, inset -0.2rem -0.2rem 0.5rem #ffffff;
+    border: 1px solid #ebf6ff;
+}
+
+.webflow-style-input.spanInput {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 0;
+    min-width: 70px;
+    margin: 0;
+    border-radius: 19px;
+    padding: 7px 20px;
+}
+
+.webflow-style-input:has(> input:focus),
+.webflow-style-input:has(> select:focus) {
+    outline: 1px solid rgba(0, 255, 247, 0.222);
+    box-shadow: 0px 0px 5px 1px rgba(0, 213, 206, 0.4);
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 999;
+        height: 3px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background-position: 0% 0%;
+        background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+        background-size: 500% auto;
+        animation: gradient 3s linear infinite;
+    }
+}
+
+.webflow-style-input:has(> input:active),
+.webflow-style-input:has(> select:active) {
+    outline: 3px solid rgba(96, 163, 215, 0.122);
+    box-shadow: 0px 0px 0px 2px rgba(113, 255, 220, 0.5);
+}
+
+// SELECT
+select option.blah {
+    font-size: 100px;
+}
+
+select:has(> option.blah),
+input::placeholder {
+    color: rgb(193, 187, 210) !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    font-size: 1.2rem;
+}
+
+select,
+.webflow-style-input input {
+    flex-grow: 1;
+    font-size: 1.4rem !important;
+    line-height: 2.4rem;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.webflow-style-input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* max-width: 400px; */
+    margin: 0;
+    border-radius: 5px;
+    padding: 1.4rem 2rem 1.6rem;
+    background: #f0f3ffcc;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem #e2e9ff, inset -0.2rem -0.2rem 0.5rem #ffffff;
+    border: 1px solid #57e6e6;
+}
+.webflow-style-input input::-webkit-input-placeholder {
+    color: #7881a1;
+    line-height: 100%;
+    margin-top: 3px;
+
+    font-weight: 800;
+
+    /* font-family: "Inter", sans-serif; */
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+.webflow-style-input.spanInput {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    margin: 0;
+    border-radius: 19px;
+    padding: 10px;
+}
+
+.webflow-style-input.spanInput input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.webflow-style-input.spanInput:after {
+    display: none;
+}

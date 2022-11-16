@@ -1,31 +1,19 @@
 import * as React from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import DefautlValues from "../DefaultValues/DefaultValues";
 
-// const formatDate = (date) =>
-//   `${date.getHours()}:${String(date.getMinutes()).padStart(2, "0")} ${String(
-//     date.getSeconds()
-//   ).padStart(2, "0")}.${String(date.getMilliseconds()).padStart(3, "0")}`;
-
-// the delay argument is for faking things out a bit
-function fetchData(url, delay = 1000) {
+function fetchQuestions(url) {
   return window
     .fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json;charset=UTF-8",
-        delay: delay,
-      },
+      method: "GET",
     })
     .then(async (response) => {
-      const { data } = await response.json();
-      if (response.ok) {
-        const questions = data?.pokemon;
-        console.log(questions);
+      const data = await response.json();
+
+      if (data) {
+        return data;
       } else {
-        // handle the error
         const error = {
-          message: data?.errors?.map((e) => e.message).join("\n"),
+          message: "Something went wrong",
         };
         return Promise.reject(error);
       }
@@ -491,66 +479,6 @@ function InfoFallback({ name }) {
   return fallbackData;
 }
 
-function DataView({ myFormVal }) {
-  return (
-    <div>
-      <section>
-        <h2>
-          {myFormVal.firstName}
-          <sup>{myFormVal.phone}</sup>
-          <sup>{myFormVal.age}</sup>
-          <sup>{myFormVal.emailAddress}</sup>
-        </h2>
-      </section>
-      <section>
-        <ul>
-          {myFormVal.drugs.map((d) => (
-            <li key={d}>
-              <label>{d}</label>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <small className="questions-info__fetch-time">{"20:00"}</small>
-    </div>
-  );
-}
-
-function QuestionsForm({ initialValues = DefautlValues, onSubmit }) {
-  const [questionsFormValues, setQuestionsFromValues] =
-    React.useState(initialValues);
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    onSubmit(questionsFormValues);
-  }
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setQuestionsFromValues((prev) => ({ ...prev, [name]: value }));
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="questions-form">
-      <label htmlFor="qName-input">Pokemon Name</label>
-
-      <div>
-        <input
-          className="pokemonName-input"
-          id="pokemonName-input"
-          name="pokemonName"
-          placeholder="Pokemon Name..."
-          value={initialValues}
-          onChange={handleChange}
-        />
-        <button type="submit" disabled={true}>
-          Submit
-        </button>
-      </div>
-    </form>
-  );
-}
-
 function ErrorFallback({ error, resetErrorBoundary }) {
   return (
     <div role="alert">
@@ -565,4 +493,4 @@ function MyErrorBoundary(props) {
   return <ErrorBoundary FallbackComponent={ErrorFallback} {...props} />;
 }
 
-export { InfoFallback, QuestionsForm, DataView, fetchData, MyErrorBoundary };
+export { InfoFallback, fetchQuestions, MyErrorBoundary };

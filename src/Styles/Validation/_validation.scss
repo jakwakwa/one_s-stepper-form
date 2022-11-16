@@ -1,0 +1,19 @@
+.validation {
+    background-color: rgb(223, 0, 63);
+    font-size: 10px;
+    padding: 10px;
+    line-height: 0px;
+    height: auto;
+    color: beige;
+    border-radius: 4px;
+    height: 12px;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    &.hide {
+        display: none;
+    }
+    &.show {
+        display: block;
+    }
+}

@@ -1,248 +1,141 @@
 import * as React from "react";
+
 import { useState } from "react";
 import "./App.scss";
-import Questions from "./one-spark-questions.json";
+import { fetchQuestions } from "./Utils/ApiHelper";
 import DefautlValues from "./DefaultValues/DefaultValues";
 import FormSteps from "./Components/FormSteps";
 import "antd/dist/antd.min.css";
-
+import Modal from "./Components/Modal/Modal";
 import OneSparkLogoSvg from "./Logo/Logo";
+import LoadSpinner from "./Components/Spinner/LoadSpinner";
+import { isValidValues } from "./Utils/Validation";
 
 function App() {
-  const [ageValue] = useState({ value: 0 });
-  const [selectedCb, setSelectedCb] = useState([]);
-  const [checkedVal, setCheckedVal] = useState("");
-
+  let questionsSections = null;
+  const [questionsAPI, setQuestionsAPI] = React.useState([]);
   const [formValues, setFormValues] = useState(DefautlValues);
+  const [ageValue] = useState(0);
+
+  const [checkedVal, setCheckedVal] = useState("");
+  const [loadingData, setLoadingData] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [firstStepVal, setFirstStepVal] = useState({
-    salary: 0,
-    age: 0,
-    gender: "",
-    jobTitle: "",
-    qualification: "",
-  });
+  const [isValidForm, setIsValidForm] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const [secondStepVal, setSecondStepVal] = useState({
-    firstName: "",
-    emailAddress: "",
-    phone: "",
-  });
+  React.useEffect(() => {
+    if (!questionsAPI) {
+      return;
+    }
 
-  const [thirdStepVal, setThirdStepVal] = useState({
-    specailist: "",
-    meds: "",
-    hospital: "",
-  });
+    setQuestionsAPI(null);
 
-  const [fourthStepVal, setFourthStepVal] = useState({
-    nicotine: "",
-    alcohol: "",
-    drugs: [],
-  });
+    fetchQuestions(
+      "https://6356e07f2712d01e14fe89d4.mockapi.io/api/v1/questions"
+    ).then((questions) => {
+      return setQuestionsAPI(questions);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const [fifthStepVal, setFifthStepVal] = useState({
-    hasInsurance: "",
-  });
+  if (loadingData) {
+    questionsSections = {
+      firstSet: questionsAPI?.sections[0].questions,
+      secondSet: questionsAPI?.sections[1].questions,
+      thirdSet: questionsAPI?.sections[2].questions,
+      fourthSet: questionsAPI?.sections[3].questions,
+      fifthSet: questionsAPI?.sections[4].questions,
+    };
+  }
 
-  const [firstSet, secondSet, thirdSet, fourthSet, fifthSet] =
-    Questions.sections;
-
-  const [questionsSections] = useState({
-    firstSet: firstSet.questions,
-    secondSet: secondSet.questions,
-    thirdSet: thirdSet.questions,
-    fourthSet: fourthSet.questions,
-    fifthSet: fifthSet.questions,
-  });
-
-  function handleRadio(e) {
+  function handleInputChange(e) {
     const { value, name } = e.target;
 
-    if (name === "prev_insurance") {
-      setFifthStepVal({
-        ...fifthStepVal,
-        hasInsurance: value,
-      });
-    }
-
-    if (name === "gender") {
-      setFirstStepVal({
-        ...firstStepVal,
-        gender: value,
-      });
-    }
-
-    if (name === "specailist") {
-      setThirdStepVal({
-        ...thirdStepVal,
-        specailist: value,
-      });
-    }
-
-    if (name === "hospital") {
-      setThirdStepVal({
-        ...thirdStepVal,
-        hospital: value,
-      });
-    }
-
-    if (name === "nicotine") {
-      setFourthStepVal({
-        ...fourthStepVal,
-        nicotine: value,
-      });
-    }
-
-    if (name === "medication") {
-      setThirdStepVal({
-        ...thirdStepVal,
-        meds: value,
-      });
-    }
-
-    if (name === "drugs") {
-      setFourthStepVal({
-        ...fourthStepVal,
-        drugs: selectedCb,
-      });
-    }
+    setFormValues({
+      salary: name === "salary" ? parseInt(value) : formValues.salary,
+      age: name === "age" ? parseInt(value) : formValues.age,
+      qualification:
+        name === "qualification" ? value : formValues.qualification,
+      jobTitle: name === "job_title" ? value : formValues.jobTitle,
+      gender: name === "gender" ? value : formValues.gender,
+      idNo: name === "id_number" ? parseInt(value) : formValues.idNo,
+      firstName: name === "name" ? value : formValues.firstName,
+      emailAddress: name === "email" ? value : formValues.emailAddress,
+      phone: name === "tel" ? parseInt(value) : formValues.phone,
+      specailist: name === "specailist" ? value : formValues.specailist,
+      meds: name === "medication" ? value : formValues.meds,
+      hospital: name === "hospital" ? value : formValues.hospital,
+      nicotine: name === "nicotine" ? value : formValues.nicotine,
+      alcohol: name === "alcohol" ? value : formValues.alcohol,
+      drugs: name === "drugs" ? value : formValues.drugs,
+      hasInsurance: name === "prev_insurance" ? value : formValues.hasInsurance,
+    });
   }
 
-  function handleInputChange(event) {
-    const { value, name } = event.target;
+  React.useEffect(() => {
+    setIsValidForm(isValidValues(formValues));
+  }, [formValues]);
 
-    let valueCopy;
-
-    if (name === "salary") {
-      valueCopy = parseInt(value);
-      setFirstStepVal({
-        ...firstStepVal,
-        salary: valueCopy,
-      });
-    }
-
-    if (name === "id_number") {
-      valueCopy = parseInt(value);
-      setThirdStepVal({
-        ...thirdStepVal,
-        idNo: value,
-      });
-    }
-    if (name === "job_title") {
-      setFirstStepVal({
-        ...firstStepVal,
-        jobTitle: value,
-      });
-    }
-
-    if (name === "qualification") {
-      setFirstStepVal({
-        ...firstStepVal,
-        qualification: value,
-      });
-    }
-
-    if (name === "alcohol") {
-      setFourthStepVal({
-        ...fourthStepVal,
-        alcohol: value,
-      });
-    }
-
-    if (name === "age") {
-      valueCopy = parseInt(value);
-      setFirstStepVal({
-        ...firstStepVal,
-        age: valueCopy,
-      });
-    }
-
-    if (name === "tel") {
-      valueCopy = parseInt(value);
-      setSecondStepVal({
-        ...secondStepVal,
-        phone: value,
-      });
-    }
-
-    if (name === "email") {
-      setSecondStepVal({
-        ...secondStepVal,
-        emailAddress: value,
-      });
-    }
-
-    if (name === "name") {
-      setSecondStepVal({
-        ...secondStepVal,
-        firstName: value,
-      });
-    }
-  }
-
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
+
+    if (!isValidForm) {
+      setErrorMsg("Please fill in all the required fields");
+      return;
+    }
+
     setIsFormSubmitted(true);
     setFormValues({
-      ...firstStepVal,
-      ...secondStepVal,
-      ...thirdStepVal,
-      ...fourthStepVal,
-      ...fifthStepVal,
+      ...formValues,
     });
-    // setTimeout(() => {
-    //   setIsFormSubmitted(false);
-    //   setResetValues(true);
-    // }, 3000);
-  };
+  }
 
-  return (
-    <>
-      <div className="App">
-        <div className="header">{OneSparkLogoSvg}</div>
+  function handleReset() {
+    setFormValues(DefautlValues);
+  }
 
-        <form onSubmit={handleSubmit}>
-          <FormSteps
-            questionsData={questionsSections}
-            ageValue={ageValue}
-            formValues={formValues}
-            firstStepVal={firstStepVal}
-            secondStepVal={secondStepVal}
-            thirdStepVal={thirdStepVal}
-            fourthStepVal={fourthStepVal}
-            fifthStepVal={fifthStepVal}
-            setFourthStepVal={setFourthStepVal}
-            handleInputChange={handleInputChange}
-            handleRadio={handleRadio}
-            selectedCb={selectedCb}
-            setSelectedCb={setSelectedCb}
-            checkedVal={checkedVal}
-            setCheckedVal={setCheckedVal}
-            setIsFormSubmitted={setIsFormSubmitted}
-          />
-          {isFormSubmitted ? (
-            <div className="form-submitted">
-              <div className="json bgCode">
-                <pre className="prettyprint lang-json">
-                  {JSON.stringify(formValues, null, 2)}
-                </pre>
-                <button
-                  className="custom-btn btn-15 close-btn"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsFormSubmitted(false);
-                  }}
-                >
-                  Close Modal
-                </button>
-              </div>
-            </div>
-          ) : null}
-        </form>
+  // Fake loading
+  setTimeout(() => {
+    setLoadingData(true);
+  }, 3000);
+  if (!loadingData) {
+    return (
+      <div className="page-loader">
+        <LoadSpinner />;
       </div>
-    </>
-  );
+    );
+  } else {
+    return (
+      <>
+        <div className="App">
+          <div className="header">{OneSparkLogoSvg}</div>
+          <form onSubmit={handleSubmit}>
+            <>
+              <FormSteps
+                questionsData={questionsSections}
+                ageValue={ageValue}
+                formValues={formValues}
+                handleInputChange={handleInputChange}
+                handleReset={handleReset}
+                checkedVal={checkedVal}
+                setCheckedVal={setCheckedVal}
+                setIsFormSubmitted={setIsFormSubmitted}
+                setFormValues={setFormValues}
+                isValidForm={isValidForm}
+                errorMsg={errorMsg}
+              />
+            </>
+          </form>
+          {isFormSubmitted ? (
+            <Modal
+              formValues={formValues}
+              setIsFormSubmitted={setIsFormSubmitted}
+            />
+          ) : null}
+        </div>
+      </>
+    );
+  }
 }
 
 export default App;

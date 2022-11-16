@@ -4,11 +4,12 @@ import { UilMars, UilVenus } from "@iconscout/react-unicons";
 const Radio = ({
   radioOptions,
   variant,
-  handleRadio,
-  itNo,
-  firstStepVal,
+  handleInputChange,
+  itemName,
+  formValues,
   checkedVal,
   setCheckedVal,
+  setFormValues,
 }) => {
   return (
     <div className="radioFieldWrapper">
@@ -18,19 +19,27 @@ const Radio = ({
               return (
                 <div key={radioOption.id} className="radioFieldWrapper">
                   <label
-                    htmlFor={`${radioOption.name}-input-id`}
+                    htmlFor={`${radioOption.id}-input-id`}
                     className="radioLabel"
                   >
                     {radioOption.label}
+
+                    <input
+                      className={`defaultRadio ${variant}`}
+                      id={`${radioOption.id}-input-id`}
+                      name={`${itemName}`}
+                      type={"radio"}
+                      onChange={handleInputChange}
+                      value={radioOption.value}
+                      checked={
+                        itemName === "medication"
+                          ? formValues.meds === radioOption.value
+                          : itemName === "prev_insurance"
+                          ? formValues.hasInsurance === radioOption.value
+                          : formValues[itemName] === radioOption.value
+                      }
+                    ></input>
                   </label>
-                  <input
-                    className={`longTextRadio ${variant}`}
-                    id={`${radioOption.label}-input-id`}
-                    name={`${itNo}`}
-                    type={"radio"}
-                    value={radioOption.value}
-                    onChange={handleRadio}
-                  ></input>
                 </div>
               );
             })
@@ -45,12 +54,12 @@ const Radio = ({
                     <>
                       <input
                         className={`genderRadio ${variant}`}
-                        id={`${radioOption.text}-input-id`}
+                        id={`${radioOption.id}-input-id`}
                         name={"gender"}
                         type={"radio"}
                         value={radioOption.value}
-                        // checked={radioOption.value}
-                        onChange={handleRadio}
+                        onChange={handleInputChange}
+                        checked={formValues.gender === radioOption.value}
                       ></input>
                       {radioOption.text === "Male" ? (
                         <UilMars />

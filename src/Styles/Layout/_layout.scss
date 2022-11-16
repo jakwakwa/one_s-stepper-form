@@ -1,0 +1,73 @@
+.row {
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: #fdfdff;
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid #efefef82;
+    padding: 4% 5%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 90px;
+    border-radius: 7px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.inputRow {
+    max-width: 608px;
+    margin-bottom: 45px;
+    /* max-width: 530px; */
+    display: flex;
+    align-items: left;
+    width: 100%;
+    flex-direction: column;
+}
+.row .inputRow.age,
+.row .inputRow.gender,
+.row .inputRow.medication,
+.row .inputRow.specailist {
+    margin-bottom: 5px;
+}
+
+.inputRow {
+    label.default-label,
+    label.default--alt {
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        width: 100%;
+        max-width: 525px;
+
+        letter-spacing: 0.12px;
+        font-weight: 500;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        font-size: 21px;
+        line-height: 1.3;
+        margin-left: -5px;
+    }
+}
+
+.inputRow {
+    // background-color: #b483d308;
+    // padding: 42px;
+    // margin-left: -30px;
+    // border-left: 2px solid  #ced0ff3d;
+    // border-bottom: 3px solid  #e6cee960;
+    border-radius: 20px;
+    padding-left: 10px;
+    // padding-top: 30px;
+    // padding-bottom:60px;
+    // box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}

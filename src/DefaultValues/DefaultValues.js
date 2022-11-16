@@ -13,6 +13,7 @@ const DefautlValues = {
   drugs: [],
   idNo: "",
   hasInsurance: "",
+  alcohol: "",
 };
 
 export default DefautlValues;
