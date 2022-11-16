@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/onespark-test/static/css/main.4bf30b2f.css",
-    "main.js": "/onespark-test/static/js/main.82d2fd14.js",
+    "main.js": "/onespark-test/static/js/main.b81e5167.js",
     "static/media/bg-gfx.jpg": "/onespark-test/static/media/bg-gfx.75d84e65bf976a3112da.jpg",
     "index.html": "/onespark-test/index.html",
     "main.4bf30b2f.css.map": "/onespark-test/static/css/main.4bf30b2f.css.map",
-    "main.82d2fd14.js.map": "/onespark-test/static/js/main.82d2fd14.js.map"
+    "main.b81e5167.js.map": "/onespark-test/static/js/main.b81e5167.js.map"
   },
   "entrypoints": [
     "static/css/main.4bf30b2f.css",
-    "static/js/main.82d2fd14.js"
+    "static/js/main.b81e5167.js"
   ]
 }
