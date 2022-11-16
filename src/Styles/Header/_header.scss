@@ -5,11 +5,25 @@
     display: flex;
     background: white;
     align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-}
-
-.header svg {
-    margin: 0 auto;
+    svg {
+        width: 100%;
+        max-width: 24px;
+        margin: 0;
+        padding: 0;
+        display: inline;
+        text-align: center;
+    }
+    span {
+        width: 100%;
+        max-width: 150px;
+        margin: 0;
+        // text-align: center;
+        display: inline-block;
+    }
 }
 
 .App-header {

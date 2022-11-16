@@ -4,7 +4,7 @@
 
 ## Github Link
 
-[Github Repo](https://github.com/jakwakwa/onespark-test)<br><br>
+[Github Repo](https://github.com/jakwakwa/one_s-test)<br><br>
 
 ## Imaginary Scenario
 
@@ -14,7 +14,7 @@ We're launching a new life insurance product targeting South African millennials
 
 Ideate and present a working page journey that streamlines the process of applying for life insurance online.
 Focus on the sign up journey based on a set of provided questions that will determine the individual's health status and risk. Target a South African millennial persona that is tech savvy while still accommodating users that are not.
-Outline your concept in sketch format to illustrate the UX journey. Think of using different types of engagement that would connect with the target persona and also set OneSpark apart from a very noisy market.<br><br>
+Outline your concept in sketch format to illustrate the UX journey. Think of using different types of engagement that would connect with the target persona and also set one_s apart from a very noisy market.<br><br>
 
 ## Coding Exercise
 

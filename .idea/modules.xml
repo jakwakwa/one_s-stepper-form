@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/onespark-test.iml" filepath="$PROJECT_DIR$/.idea/onespark-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/one_s-test.iml" filepath="$PROJECT_DIR$/.idea/one_s-test.iml" />
     </modules>
   </component>
 </project>

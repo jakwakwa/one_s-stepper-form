@@ -7,7 +7,7 @@ import DefautlValues from "./DefaultValues/DefaultValues";
 import FormSteps from "./Components/FormSteps";
 import "antd/dist/antd.min.css";
 import Modal from "./Components/Modal/Modal";
-import OneSparkLogoSvg from "./Logo/Logo";
+import one_sLogoSvg from "./Logo/Logo";
 import LoadSpinner from "./Components/Spinner/LoadSpinner";
 import { isValidValues } from "./Utils/Validation";
 
@@ -108,7 +108,9 @@ function App() {
     return (
       <>
         <div className="App">
-          <div className="header">{OneSparkLogoSvg}</div>
+          <div className="header">
+            {one_sLogoSvg} <span>stepper form</span>
+          </div>
           <form onSubmit={handleSubmit}>
             <>
               <FormSteps
