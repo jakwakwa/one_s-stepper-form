@@ -1,4 +1,4 @@
-# <strong>Frontend Technical Test <br>by Jaco Kotzee <br>for One Spark</strong>
+# <strong>Frontend Coding Challenge <br>by Jaco Kotzee (Jakwakwa)</strong>
 
 ## <strong>Project Name:</strong> <br>User Flow<br><br>
 
