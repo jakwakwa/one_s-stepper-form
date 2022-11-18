@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/one_s-test/static/css/main.aa2a24f1.css",
-    "main.js": "/one_s-test/static/js/main.f5664e41.js",
-    "static/media/bg-gfx.jpg": "/one_s-test/static/media/bg-gfx.75d84e65bf976a3112da.jpg",
-    "index.html": "/one_s-test/index.html",
-    "main.aa2a24f1.css.map": "/one_s-test/static/css/main.aa2a24f1.css.map",
-    "main.f5664e41.js.map": "/one_s-test/static/js/main.f5664e41.js.map"
+    "main.css": "/one_s-stepper-form/static/css/main.e66e1e7f.css",
+    "main.js": "/one_s-stepper-form/static/js/main.f5664e41.js",
+    "static/media/bg-gfx.jpg": "/one_s-stepper-form/static/media/bg-gfx.75d84e65bf976a3112da.jpg",
+    "index.html": "/one_s-stepper-form/index.html",
+    "main.e66e1e7f.css.map": "/one_s-stepper-form/static/css/main.e66e1e7f.css.map",
+    "main.f5664e41.js.map": "/one_s-stepper-form/static/js/main.f5664e41.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa2a24f1.css",
+    "static/css/main.e66e1e7f.css",
     "static/js/main.f5664e41.js"
   ]
 }
